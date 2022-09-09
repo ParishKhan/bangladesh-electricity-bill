@@ -1,37 +1,59 @@
-const billing = {
+type bilingType = {
+  [key: string]: {
+    name: string;
+    demand: number;
+    step: boolean;
+    flat?: number;
+    offPeak?: number;
+    peak?: number;
+    superOffPeak?: number;
+    lifeLine?: rangeType;
+    range?: rangeType[];
+  };
+};
+
+type rangeType = {
+  unit: [number, number?];
+  price: number;
+}
+
+const BILLING_INFO = {
+  vat: 5,
+  lifeLineUnit: 50,
+  lifeLinePrice: 3.75
+}
+
+const prices: bilingType = {
   "LT-A": {
     name: "Residential",
     demand: 30,
     step: true,
     range: [
       {
-        unit: [0,50],
-        price: 3.75
+        unit: [0, 75],
+        price: 4.19,
       },
       {
-        unit: [1,75],
-        price: 4.19
+        unit: [75, 200],
+        price: 5.72,
       },
       {
-        unit: [76,200],
-        price: 5.72
-      },{
-        unit: [201,300],
-        price: 6.00
+        unit: [200, 300],
+        price: 6.0,
       },
       {
-        unit: [301,400],
-        price: 6.34
+        unit: [300, 400],
+        price: 6.34,
       },
       {
-        unit: [401,600],
-        price: 9.94
+        unit: [400, 600],
+        price: 9.94,
       },
       {
-        unit: [600],
-        price: 11.46
-      }
-    ]
+        unit: [600, 99999999999],
+        price: 11.46,
+      },
+    ],
   },
   "LT-B": {
     name: "Agricultural pumps",
@@ -55,7 +77,7 @@ const billing = {
     name: "Construction",
     demand: 100,
     step: false,
-    flat: 12.00,
+    flat: 12.0,
     offPeak: null,
     peak: null,
     superOffPeak: null,
@@ -73,7 +95,7 @@ const billing = {
     name: "Street lights and water pumps",
     demand: 60,
     step: false,
-    flat: 7.70,
+    flat: 7.7,
     offPeak: null,
     peak: null,
     superOffPeak: null,
@@ -91,7 +113,7 @@ const billing = {
     name: "Commercial and Office",
     demand: 60,
     step: false,
-    flat: 10.30,
+    flat: 10.3,
     offPeak: 9.27,
     peak: 12.36,
     superOffPeak: null,
@@ -100,9 +122,12 @@ const billing = {
     name: "Temporary",
     demand: 100,
     step: false,
-    flat: 16.00,
+    flat: 16.0,
     offPeak: null,
     peak: null,
     superOffPeak: null,
   },
 };
+
+export { prices, BILLING_INFO };
+export type { bilingType, rangeType };
