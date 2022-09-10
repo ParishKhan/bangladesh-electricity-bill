@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Demo library framework</title>
 
-    <script src="../dist/my-library.js"></script>
+    <script src="../dist/index.js"></script>
   </head>
   <body>
     <script>
-      const { calculateBill } = window.MyLibrary;
-      console.log(calculateBill({classType: "LT-A", unit: 365, load: 2}));
+      const { calculateBill } = window.ElectricBillBD;
+      console.log(calculateBill({classType: "LT-A", unit: 135, load: 2}));
       console.log(calculateBill({classType: "LT-A", unit: 365, load: 2}));
     </script>
   </body>

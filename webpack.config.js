@@ -4,12 +4,12 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const config = {
   target: 'web',
   entry: {
-    index: './src/my-library.ts',
+    index: './src/index.ts',
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'my-library.js',
-    library: 'MyLibrary',
+    filename: 'index.js',
+    library: 'ElectricBillBD',
     libraryTarget: 'umd',
     globalObject: 'this',
     umdNamedDefine: true,

@@ -1,4 +1,5 @@
 import { prices, rangeType, BILLING_INFO } from "./data";
+import { decideDecimal } from './utility';
 
 enum ErrorMessages {
   INVALID_NUMBER = "Number must be greater then 1",
@@ -59,8 +60,8 @@ const billWithSteps = ({range, unit}: TBillWithSteps) => {
 }
 
 const calculateBill = ({classType, unit, load}: TCalculateBill) => {
-  const bill = structuredClone(prices[classType]);
   let price;
+  const bill = structuredClone(prices[classType]);
 
   if(bill.step && bill.range) {
     price = billWithSteps({range: bill.range, unit});
@@ -70,7 +71,7 @@ const calculateBill = ({classType, unit, load}: TCalculateBill) => {
   
   const total = totalBill({ unitPrice: price, demandRate: bill.demand, load });
 
-  return Math.ceil(total);
+  return decideDecimal(total);
 }
 
 export { calculateBill }

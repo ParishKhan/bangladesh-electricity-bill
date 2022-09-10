@@ -1,4 +1,4 @@
-import { isPrimeNumber, ErrorMessages } from '../src/my-library';
+import { isPrimeNumber, ErrorMessages } from '../src/index';
 
 describe('Demo test', () => {
   it('Should detect prime numbers', () => {

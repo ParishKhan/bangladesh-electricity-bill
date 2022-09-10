@@ -2,8 +2,8 @@
   "name": "bangladesh-electric-bill",
   "version": "1.0.0",
   "description": "Calculate the electricity bill in Bangladesh",
-  "main": "./dist/my-library.js",
-  "types": "./dist/my-library.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
