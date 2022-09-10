@@ -23,7 +23,7 @@ const BILLING_INFO = {
   lifeLinePrice: 3.75
 }
 
-const prices: bilingType = {
+const prices: bilingType = Object.freeze({
   "LT-A": {
     name: "Residential",
     demand: 30,
@@ -127,7 +127,7 @@ const prices: bilingType = {
     peak: null,
     superOffPeak: null,
   },
-};
+});
 
 export { prices, BILLING_INFO };
 export type { bilingType, rangeType };

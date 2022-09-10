@@ -59,7 +59,7 @@ const billWithSteps = ({range, unit}: TBillWithSteps) => {
 }
 
 const calculateBill = ({classType, unit, load}: TCalculateBill) => {
-  const bill = prices[classType];
+  const bill = structuredClone(prices[classType]);
   let price;
 
   if(bill.step && bill.range) {
