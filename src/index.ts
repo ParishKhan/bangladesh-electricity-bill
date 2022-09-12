@@ -1,5 +1,6 @@
 import { prices, rangeType, BILLING_INFO } from "./data";
 import { decideDecimal } from './utility';
+import { BILL_TYPE } from './constant';
 
 enum ErrorMessages {
   INVALID_NUMBER = "Number must be greater then 1",
@@ -74,4 +75,4 @@ const calculateBill = ({classType, unit, load}: TCalculateBill) => {
   return decideDecimal(total);
 }
 
-export { calculateBill }
+export { calculateBill, BILL_TYPE }
