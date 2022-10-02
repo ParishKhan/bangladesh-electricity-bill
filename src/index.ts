@@ -48,7 +48,7 @@ const totalBill = ({ unitPrice, demandRate, load = 1 }: TBill): TResponse => {
   const totalFinal = decideDecimal(total);
 
   const response = {
-    unitPrice: costing,
+    unitPrice: unitPrice,
     demand: demand,
     vat: vat,
     total: total,
